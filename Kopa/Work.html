@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Partner Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    .file-input-wrapper button {
+      background-color: #fe4066;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .file-input-wrapper button:hover {
+      background-color: #c2484a;
+    }
+
+    button[type="submit"] {
+      background-color: #fe4066;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #c2484a;
+    }
+
+    .partner-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .partner-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .partner-item:last-child {
+      border-bottom: none;
+    }
+
+    .partner-item .partner-info {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+
+    .partner-item h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .partner-item p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .partner-item button {
+      background-color: #fe4066;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .partner-item button:hover {
+      background-color: #c2484a;
+    }
+  </style>
+</head>
+<body data-aos="fade-up">
+  <div class="container">
+    <h1>Work Management</h1>
+
+    <!-- Add Partner Form -->
+    <form action="/partners" enctype="multipart/form-data" method="POST">
+      <label for="partnerName">Project Name</label>
+      <input type="text" id="partnerName" required name="partnerName">
+      <label for="clientname">Client Name</label>
+      <input type="text" id="clientname" required name="clientname">
+
+      <label for="description">Description</label>
+      <textarea id="description" required name="description"></textarea>
+
+      <label for="category">Project Category</label>
+      <input type="text" id="category" required name="category">
+
+      <label for="companyurl">Company URL</label>
+      <input type="text" id="companyurl" required name="companyurl">
+
+      <label for="partnerImage">Work Image</label>
+      <div class="file-input-wrapper">
+        <input type="file" id="partnerImage" name="partnerImage" accept="image/*">
+        <button type="button">Choose Image</button>
+      </div>
+
+      <button type="submit">Add Partner</button>
+    </form>
+  </div>
+</body>
+</html>
